@@ -14,3 +14,4 @@
 ## 0.1.2
 - Overlay agora é **ciente do teclado**: reposiciona acima do teclado virtual usando `MediaQuery.viewInsets.bottom`.
 - Opções: `dockAboveKeyboard` (default: true) e `autoHideOnKeyboard` (default: false).
+-UniOverlayShortcuts(enabled: true / false),
