@@ -32,6 +32,7 @@ final visibility = UniOverlayVisibility(initial: true);
 runApp(
   UniOverlayShortcuts(
     controller: visibility,
+    enabled: true,
     child: MaterialApp(
       builder: (context, child) => uniOverlayAppBuilder(
         context: context,
@@ -45,20 +46,12 @@ runApp(
 );
 ```
 
-## Publicando no pub.dev
-1. Ajuste `homepage`, `repository`, `issue_tracker` no `pubspec.yaml`.
-2. Valide:
-   ```sh
-   dart pub publish --dry-run
-   ```
-3. Tag:
-   ```sh
-   git tag v0.1.0 && git push --tags
-   ```
-4. Publique:
-   ```sh
-   dart pub publish
-   ```
+## Uso rápido
+Para exibir no Log use print(), debugPrint(), FlutterError, onError ou:
+```dart
+Log.i('mensagem');
+Log.e(error, stackTrace);
+```
 
 ## Licença
 MIT
