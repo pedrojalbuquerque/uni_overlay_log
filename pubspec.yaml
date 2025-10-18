@@ -1,9 +1,9 @@
 name: uni_overlay_log
 description: Console de logs embutido e arrastável para Flutter Web/Mobile/Desktop, com captura de prints/erros e hotkey.
 version: 0.1.2
-homepage: https://github.com/sua-org/uni_overlay_log
-repository: https://github.com/sua-org/uni_overlay_log
-issue_tracker: https://github.com/sua-org/uni_overlay_log/issues
+homepage: https://github.com/pedrojalbuquerque/uni_overlay_log
+repository: https://github.com/pedrojalbuquerque/uni_overlay_log
+issue_tracker: https://github.com/pedrojalbuquerque/uni_overlay_log/issues
 topics:
   - logging
   - debug

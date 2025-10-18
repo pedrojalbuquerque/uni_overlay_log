@@ -7,7 +7,7 @@
 
 Console de logs **embutido e arrastável** para Flutter **Web/Mobile/Desktop**, com captura de `print`, `debugPrint`, `FlutterError` e `PlatformDispatcher.onError`. Inclui **hotkey** (tecla `) para mostrar/ocultar o painel.
 
-https://github.com/sua-org/uni_overlay_log
+https://github.com/pedrojalbuquerque/uni_overlay_log
 
 ## Recursos
 - Captura automática de: `print()`, `debugPrint()`, `FlutterError`, `onError`
