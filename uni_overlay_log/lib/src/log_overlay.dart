@@ -7,9 +7,24 @@ class UniOverlayVisibility extends ChangeNotifier {
   bool _visible;
   UniOverlayVisibility({bool initial = true}) : _visible = initial;
   bool get visible => _visible;
-  void toggle() { _visible = !_visible; notifyListeners(); }
-  void show() { if (!_visible) { _visible = true; notifyListeners(); } }
-  void hide() { if (_visible) { _visible = false; notifyListeners(); } }
+  void toggle() {
+    _visible = !_visible;
+    notifyListeners();
+  }
+
+  void show() {
+    if (!_visible) {
+      _visible = true;
+      notifyListeners();
+    }
+  }
+
+  void hide() {
+    if (_visible) {
+      _visible = false;
+      notifyListeners();
+    }
+  }
 }
 
 class UniOverlayShortcuts extends StatelessWidget {
@@ -20,7 +35,7 @@ class UniOverlayShortcuts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Shortcuts(
-      shortcuts: const {
+      shortcuts: {
         LogicalKeySet(LogicalKeyboardKey.backquote): ActivateIntent(),
       },
       child: Actions(
@@ -50,8 +65,7 @@ class UniOverlayPortal extends StatefulWidget {
 class _UniOverlayPortalState extends State<UniOverlayPortal> {
   final _lines = <String>[];
   late final StreamSubscription<String> _sub;
-  UniOverlayVisibility get _visibility =>
-      widget.visibility ?? _internal;
+  UniOverlayVisibility get _visibility => widget.visibility ?? _internal;
   final _internal = UniOverlayVisibility(initial: true);
 
   @override
@@ -84,7 +98,7 @@ class _UniOverlayPortalState extends State<UniOverlayPortal> {
             builder: (context, scrollController) {
               return Material(
                 elevation: 16,
-                color: Colors.black.withOpacity(0.9),
+                color: Colors.black.withValues(alpha: 0.9),
                 borderRadius: const BorderRadius.only(
                   topLeft: Radius.circular(16),
                   topRight: Radius.circular(16),
@@ -97,8 +111,7 @@ class _UniOverlayPortalState extends State<UniOverlayPortal> {
                         const Icon(Icons.terminal, color: Colors.white70),
                         const SizedBox(width: 8),
                         const Expanded(
-                          child: Text('Console',
-                              style: TextStyle(color: Colors.white70)),
+                          child: Text('Console', style: TextStyle(color: Colors.white70)),
                         ),
                         IconButton(
                           tooltip: 'Copiar',
@@ -111,8 +124,7 @@ class _UniOverlayPortalState extends State<UniOverlayPortal> {
                         IconButton(
                           tooltip: 'Limpar',
                           onPressed: () => setState(_lines.clear),
-                          icon: const Icon(Icons.delete_outline,
-                              color: Colors.white70),
+                          icon: const Icon(Icons.delete_outline, color: Colors.white70),
                         ),
                         IconButton(
                           tooltip: 'Fechar (`)',
@@ -127,8 +139,7 @@ class _UniOverlayPortalState extends State<UniOverlayPortal> {
                         controller: scrollController,
                         itemCount: _lines.length,
                         itemBuilder: (_, i) => Padding(
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 8, vertical: 2),
+                          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                           child: Text(
                             _lines[i],
                             style: const TextStyle(

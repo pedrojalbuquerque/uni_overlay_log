@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:developer' as dev;
 import 'package:flutter/foundation.dart';
-import 'package:flutter/widgets.dart';
 
 class UniOverlayLog {
   UniOverlayLog._();
@@ -21,7 +20,7 @@ class UniOverlayLog {
       final oldDebugPrint = debugPrint;
       debugPrint = (String? message, {int? wrapWidth}) {
         if (message != null) Log.i(message);
-        oldDebugPrint?.call(message, wrapWidth: wrapWidth);
+        oldDebugPrint.call(message, wrapWidth: wrapWidth);
       };
     }
 
