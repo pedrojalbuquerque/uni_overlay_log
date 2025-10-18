@@ -1,0 +1,19 @@
+name: uni_overlay_log
+description: Console de logs embutido e arrastável para Flutter Web/Mobile/Desktop, com captura de prints/erros e hotkey.
+version: 0.1.0
+homepage: https://github.com/sua-org/uni_overlay_log
+environment:
+  sdk: ">=2.17.0 <4.0.0"
+  flutter: ">=3.3.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_lints: ^4.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true

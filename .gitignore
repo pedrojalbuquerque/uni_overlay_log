@@ -1,0 +1,16 @@
+# Dart & Flutter
+.dart_tool/
+.packages
+build/
+.pub-cache/
+.flutter-plugins
+.flutter-plugins-dependencies
+.melos_tool/
+*.iml
+.idea/
+android/.gradle/
+android/local.properties
+pubspec.lock
+# Mac/Win/Linux
+.DS_Store
+Thumbs.db

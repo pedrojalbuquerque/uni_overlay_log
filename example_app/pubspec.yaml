@@ -1,0 +1,15 @@
+name: example_app
+description: Exemplo de uso do uni_overlay_log
+publish_to: "none"
+environment:
+  sdk: ">=2.17.0 <4.0.0"
+  flutter: ">=3.3.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  uni_overlay_log:
+    path: ../uni_overlay_log
+
+flutter:
+  uses-material-design: true
