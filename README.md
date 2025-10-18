@@ -20,7 +20,7 @@ https://github.com/pedrojalbuquerque/uni_overlay_log
 ## Instalação (pub.dev)
 ```yaml
 dependencies:
-  uni_overlay_log: ^0.1.0
+  uni_overlay_log: ^0.1.5
 ```
 *(ou via Git enquanto não publica)*
 
@@ -46,7 +46,7 @@ runApp(
 );
 ```
 
-## Uso rápido
+## Adicionar ao Log
 Para exibir no Log use print(), debugPrint(), FlutterError, onError ou:
 ```dart
 Log.i('mensagem');
