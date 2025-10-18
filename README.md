@@ -1,51 +1,64 @@
 # uni_overlay_log
 
-Console de logs embutido (arrastável) para Flutter Web/Mobile/Desktop, com captura de `print`, `debugPrint`, `FlutterError` e `PlatformDispatcher.onError`. Inclui hotkey (`) para mostrar/ocultar.
+[![Pub Version](https://img.shields.io/pub/v/uni_overlay_log.svg)](https://pub.dev/packages/uni_overlay_log)
+[![SDK](https://img.shields.io/badge/SDK-%3E%3D2.17.0-blue.svg)](https://dart.dev)
+[![Flutter](https://img.shields.io/badge/Flutter-%3E%3D3.3.0-blue.svg)](https://flutter.dev)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-## Instalação
+Console de logs **embutido e arrastável** para Flutter **Web/Mobile/Desktop**, com captura de `print`, `debugPrint`, `FlutterError` e `PlatformDispatcher.onError`. Inclui **hotkey** (tecla `) para mostrar/ocultar o painel.
 
-```yaml
-dependencies:
-  uni_overlay_log:
-    git:
-      url: https://github.com/sua-org/uni_overlay_log.git
-      ref: main
-```
-
-## Uso rápido
-
-```dart
-void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  UniOverlayLog.I.init(capturePrints: true);
-
-  final visibility = UniOverlayVisibility(initial: true);
-
-  runApp(
-    UniOverlayShortcuts(
-      controller: visibility, // tecla ` alterna
-      child: MaterialApp(
-        builder: (context, child) => uniOverlayAppBuilder(
-          context: context,
-          child: child,
-          isWeb: kIsWeb,
-          visibility: visibility,
-        ),
-        home: const HomePage(),
-      ),
-    ),
-  );
-}
-```
-
-No seu app, use `Log.i('mensagem')` e `Log.e(erro, stackTrace)` para enviar ao console embutido.
+https://github.com/sua-org/uni_overlay_log
 
 ## Recursos
-- Captura automática de `print`, `debugPrint`, `FlutterError`, `onError`
-- Draggable bottom sheet
-- Copiar / Limpar
-- Hotkey backquote (`) para visibilidade
-- Funciona em Web/Android/iOS/Desktop
+- Captura automática de: `print()`, `debugPrint()`, `FlutterError`, `onError`
+- Console embutido (DraggableScrollableSheet)
+- Copiar/Limpar
+- Hotkey ` (backquote) para visibilidade
+- Web / Android / iOS / Desktop
+- Zero dependências
+
+## Instalação (pub.dev)
+```yaml
+dependencies:
+  uni_overlay_log: ^0.1.0
+```
+*(ou via Git enquanto não publica)*
+
+## Uso rápido
+Veja `example/`. Resumo:
+```dart
+UniOverlayLog.I.init(capturePrints: true);
+final visibility = UniOverlayVisibility(initial: true);
+runApp(
+  UniOverlayShortcuts(
+    controller: visibility,
+    child: MaterialApp(
+      builder: (context, child) => uniOverlayAppBuilder(
+        context: context,
+        child: child,
+        isWeb: kIsWeb,
+        visibility: visibility,
+      ),
+      home: const MyHome(),
+    ),
+  ),
+);
+```
+
+## Publicando no pub.dev
+1. Ajuste `homepage`, `repository`, `issue_tracker` no `pubspec.yaml`.
+2. Valide:
+   ```sh
+   dart pub publish --dry-run
+   ```
+3. Tag:
+   ```sh
+   git tag v0.1.0 && git push --tags
+   ```
+4. Publique:
+   ```sh
+   dart pub publish
+   ```
 
 ## Licença
 MIT
